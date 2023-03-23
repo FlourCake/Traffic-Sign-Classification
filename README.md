@@ -16,7 +16,7 @@
 * [Contact](#contact)
 
 ## General Info
-This web app performs the classification of traffic sign images. App built using Flask framework and the models are created through [Traffic Sign Classification Notebook](https://github.com/FlourCake/Traffic-Sign-Classification-Notebook). See live demo [here](https://traffic-sign-classification.herokuapp.com/).
+This web app performs the classification of traffic sign images. App built using Flask framework and the models are created through [Traffic Sign Classification Notebook](https://github.com/FlourCake/Traffic-Sign-Classification-Notebook).
 
 ## Installation
 * Clone this repo
