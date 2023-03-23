@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #F5F5F5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #F2F2F2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #2E2E2E;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    color: #2E2E2E;
+}
+
+input[type="file"] {
+    display: block;
+    margin-top: 5px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #2E2E2E;
+    background-color: #FFFFFF;
+}
+
+button[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #007BFF;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+    background-color: #0062CC;
+}
+
+img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    max-width: 200;
+    max-height: 200;
+}
+
+#results {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-size: 1.1rem;
+    color: #2E2E2E;
+}
+
+td {
+    font-size: 1rem;
+    color: #2E2E2E;
+}
+
+@media screen and (max-width: 600px) {
+/* Add your custom responsive CSS styles here */
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    input[type="file"] {
+        width: 100%;
+    }
+}
+
+/* Add your custom color scheme here */
+body {
+    background-color: #ECEFF1;
+}
+
+.container {
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"] {
+    background-color: #F9A826;
+}

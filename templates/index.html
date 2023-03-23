@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Traffic Sign Classification with CNN</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="static/css/index.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Traffic Sign Classification with CNN</h1>
+            <form action="/" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="file">Upload an image</label>
+                    <input type="file" name="file" id="file">
+                </div>
+                <button type="submit">Predict</button>
+            </form>
+            <div id="results">
+                {% if filename %}
+                <img src="data:image/png;base64, {{ filename.decode('utf-8') }}" alt="Processed Image">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Probability</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ classname }}</td>
+                            <td>{{ score }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>
