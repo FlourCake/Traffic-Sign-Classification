@@ -64,7 +64,14 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
+    color: #FFFFFF;
     background-color: #0062CC;
+}
+
+button[type="submit"]:disabled {
+    color: #2E2E2E;
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
 img {
