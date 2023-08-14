@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Traffic Sign Classification with CNN</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="static/css/index.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Traffic Sign Classification with CNN</h1>
+            <form action="/" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="file">Upload an image</label>
+                    <input type="file" accept="image/png, image/jpg, image/jpeg, text/plain" name="file" id="file">
+                </div>
+                <button type="submit" id="submit" disabled>Predict</button>
+            </form>
+            <div id="results">
+                {% if data %}
+                    {% if batch %}
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Accuracy</th>
+                                    <th>Precision</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                            {% for key, value in data.items() if key in ["macro avg", "accuracy"] %}
+                                {% if value is mapping %}
+                                    {% for key2, value2 in value.items() %}
+                                        {% if key2 != "support" %}
+                                        <td>{{ "{:.2f}".format(value2) }}</td>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% else %}
+                                    <td>{{ "{:.2f}".format(value) }}</td>
+                                {% endif %}
+                            {% endfor %}
+                                </tr>
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <img src="data:image/png;base64, {{ data.image.decode('utf-8') }}" alt="Processed Image">
+                        
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Class</th>
+                                    <th>Probability</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ data.classname }}</td>
+                                    <td>{{ "{:.2f}".format(data.score) }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </body>
+    {% if error %}
+        <script>
+            alert("{{ error }}")
+        </script>
+    {% endif %}
+    <script src="static/js/index.js"></script>
+</html>

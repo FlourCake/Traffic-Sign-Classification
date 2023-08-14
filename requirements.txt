@@ -1,4 +1,5 @@
 flask
 numpy
-Pillow
 tensorflow
+opencv-python
+scikit-learn
